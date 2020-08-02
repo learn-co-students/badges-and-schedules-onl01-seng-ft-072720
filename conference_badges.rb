@@ -6,14 +6,27 @@ def batch_badge_creator(array)
   results = []
   array.each do |name|
     results << badge_maker(name)
-end
+  end
 results
 end
 
 def assign_rooms(array)
-  room_asignments = []
+  room_assignments = []
   array.each_with_index do |name, room|
-  puts "Hello, #{name}! You'll be assigned to room #{room}! "
-end
+  room_assignments << "Hello, #{name}! You'll be assigned to room #{room+1}!"
+  end
 room_assignments
 end
+
+def printer(attendees)
+  batch_badge_creator(attendees).each do |badge|
+    puts badge
+  end
+  assign_rooms(attendees).each do |room|
+    puts room
+  end
+end
+
+
+
+
